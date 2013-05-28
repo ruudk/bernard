@@ -15,6 +15,10 @@ class SymfonySerializerSpec extends ObjectBehavior
     function let($serializer)
     {
         $this->beConstructedWith($serializer);
+    }
+
+    function its_a_serializer()
+    {
         $this->shouldBeAnInstanceOf('Bernard\Serializer');
     }
 
