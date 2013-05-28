@@ -9,8 +9,6 @@ use Bernard\Message;
  */
 class ObjectResolver extends AbstractResolver
 {
-    protected $services = array();
-
     /**
      * {@inheritDoc}
      */
