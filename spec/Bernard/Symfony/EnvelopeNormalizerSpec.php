@@ -62,7 +62,7 @@ class EnvelopeNormalizerSpec extends \PhpSpec\ObjectBehavior
         $serializer->denormalize(array('name' => 'ImportUsers'), 'Bernard\Message\DefaultMessage', null, array())
             ->shouldBeCalled()->willReturn(new DefaultMessage('ImportUsers'));
 
-        $data = array('args' => array('name' => 'ImportUsers'), 'class' => 'Invalid:Namespace:ImportUsers',
+        $data = array('args' => array(), 'class' => 'Invalid:Namespace:ImportUsers',
             'retries' => 0, 'timestamp' => time());
 
         // Envelope class should be the same class even when it does not exists.
