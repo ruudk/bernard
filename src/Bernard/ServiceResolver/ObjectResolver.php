@@ -7,7 +7,7 @@ use Bernard\Message;
 /**
  * @package Bernard
  */
-class ObjectResolver implements \Bernard\ServiceResolver
+class ObjectResolver extends AbstractResolver
 {
     protected $services = array();
 
@@ -20,18 +20,14 @@ class ObjectResolver implements \Bernard\ServiceResolver
             throw new \InvalidArgumentException('The given service is not an object.');
         }
 
-        $this->services[$name] = $service;
+        parent::register($name, $service);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function resolve(Message $message)
+    protected function getService(Message $message)
     {
-        if (isset($this->services[$message->getName()])) {
-            return new Invocator($this->services[$message->getName()], $message);
-        }
-
-        throw new \InvalidArgumentException('No service registered for message "' . $message->getName() . '".');
+        return $this->services[$message->getName()];
     }
 }
