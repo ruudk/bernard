@@ -17,9 +17,11 @@ class InvocatorSpec extends \PhpSpec\ObjectBehavior
 
     function it_prefix_method_name_and_uppercase_first_letter($message)
     {
-        $message->getName()->willReturn('uploadImage');
+        $message->getName()->willReturn('UploadImage', 'Sendnewsletter', 'importUsers');
 
         $this->getMethodName()->shouldReturn('onUploadImage');
+        $this->getMethodName()->shouldReturn('onSendnewsletter');
+        $this->getMethodName()->shouldReturn('onImportUsers');
     }
 
     function it_invokes_method_on_service_service_with_message_as_argument($service, $message)
