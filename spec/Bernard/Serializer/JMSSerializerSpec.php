@@ -14,6 +14,7 @@ class JMSSerializerSpec extends \PhpSpec\ObjectBehavior
     function let($serializer)
     {
         $this->beConstructedWith($serializer);
+        $this->shouldBeAnInstanceOf('Bernard\Serializer');
     }
 
     function it_serializes_into_json_while_preserving_null($serializer, $message)
