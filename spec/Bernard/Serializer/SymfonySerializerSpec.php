@@ -3,10 +3,8 @@
 namespace spec\Bernard\Serializer;
 
 use Bernard\Message\Envelope;
-use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
-class SymfonySerializerSpec extends ObjectBehavior
+class SymfonySerializerSpec extends \PhpSpec\ObjectBehavior
 {
     /**
      * @param Symfony\Component\Serializer\SerializerInterface $serializer
