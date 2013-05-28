@@ -19,6 +19,8 @@ class ContainerAwareResolverSpec extends \spec\Bernard\ServiceResolver\AbstractR
      */
     function it_resolve_to_an_invocator($message, $container)
     {
+        $this->register('ImportUsers', 'import_users_service');
+
         $container->get('import_users_service')->shouldBeCalled()
             ->willReturn(new \stdClass);
 

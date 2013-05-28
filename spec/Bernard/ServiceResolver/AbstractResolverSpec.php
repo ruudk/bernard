@@ -23,10 +23,11 @@ abstract class AbstractResolverSpec extends \PhpSpec\ObjectBehavior
             ->duringResolve($message);
     }
 
+    /**
+     * @param Bernard\Message $message
+     */
     function it_resolve_to_an_invocator($message, $container)
     {
-        $this->register('ImportUsers', 'import_users_service');
-
         $message->getName()->shouldBeCalled()
             ->willReturn('ImportUsers');
 

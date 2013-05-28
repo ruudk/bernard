@@ -19,6 +19,8 @@ class PimpleAwareResolverSpec extends \spec\Bernard\ServiceResolver\AbstractReso
      */
     function it_resolve_to_an_invocator($message, $container)
     {
+        $this->register('ImportUsers', 'import_users_service');
+
         $container->offsetGet('import_users_service')->shouldBeCalled()
             ->willReturn(new \stdClass);
 
