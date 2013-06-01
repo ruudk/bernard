@@ -14,19 +14,16 @@ use Bernard\Serializer;
  */
 class PersistentFactory implements \Bernard\QueueFactory
 {
-    protected $queues;
     protected $connection;
     protected $serializer;
+    protected $queues = array();
 
     /**
      * @param Driver          $connection
      * @param SerializerInterface $serializer
      */
-    public function __construct(
-        Driver $connection,
-        Serializer $serializer
-    ) {
-        $this->queues     = array();
+    public function __construct(Driver $connection, Serializer $serializer)
+    {
         $this->connection = $connection;
         $this->serializer = $serializer;
     }

@@ -30,16 +30,6 @@ class PersistentQueue extends AbstractQueue
     }
 
     /**
-     * Register with the connection
-     */
-    public function register()
-    {
-        $this->errorIfClosed();
-
-        $this->connection->createQueue($this->name);
-    }
-
-    /**
      * {@inheritDoc}
      */
     public function count()
@@ -88,5 +78,13 @@ class PersistentQueue extends AbstractQueue
         $messages = $this->connection->peekQueue($this->name, $index, $limit);
 
         return array_map(array($this->serializer, 'deserialize'), $messages);
+    }
+
+    /**
+     * Register with the connection
+     */
+    protected function register()
+    {
+        $this->connection->createQueue($this->name);
     }
 }
