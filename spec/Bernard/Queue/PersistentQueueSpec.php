@@ -10,7 +10,7 @@ class PersistentQueueSpec extends \PhpSpec\ObjectBehavior
 {
     /**
      * @param Bernard\Driver $driver
-     * @param Bernard\serializer $serializer
+     * @param Bernard\Serializer $serializer
      */
     function let($driver, $serializer)
     {
