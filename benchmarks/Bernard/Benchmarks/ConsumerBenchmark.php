@@ -18,6 +18,7 @@ class ConsumerBenchmark extends \Athletic\AthleticEvent
 
         $this->queues = new InMemoryFactory();
 
+        // Create a lot of messages.
         for ($i = 0;$i < 100000;$i++) {
             $this->queues->create('send-newsletter')->enqueue(
                 new Envelope(new DefaultMessage('SendNewsletter'))
