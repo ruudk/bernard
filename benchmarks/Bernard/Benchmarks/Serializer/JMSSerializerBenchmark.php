@@ -3,7 +3,7 @@
 namespace Bernard\Benchmarks\Serializer;
 
 use Bernard\Message\DefaultMessage;
-use Bernard\Message\Envelope;
+use Bernard\Envelope;
 use Bernard\Serializer\JMSSerializer;
 use Bernard\JMSSerializer\EnvelopeHandler;
 use JMS\Serializer\SerializerBuilder;

@@ -11,6 +11,10 @@ class Service
         throw new \Exception();
     }
 
+    public function sendNewsletter()
+    {
+    }
+
     public function importUsers()
     {
         static::$importUsers = true;

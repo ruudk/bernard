@@ -3,7 +3,7 @@
 namespace Bernard\Benchmarks\Serializer;
 
 use Bernard\Message\DefaultMessage;
-use Bernard\Message\Envelope;
+use Bernard\Envelope;
 use Bernard\Serializer\SymfonySerializer;
 use Bernard\Symfony\DefaultMessageNormalizer;
 use Bernard\Symfony\EnvelopeNormalizer;

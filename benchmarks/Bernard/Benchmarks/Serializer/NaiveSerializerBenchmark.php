@@ -3,7 +3,7 @@
 namespace Bernard\Benchmarks\Serializer;
 
 use Bernard\Serializer\NaiveSerializer;
-use Bernard\Message\Envelope;
+use Bernard\Envelope;
 use Bernard\Message\DefaultMessage;
 
 class NaiveSerializerBenchmark extends \Athletic\AthleticEvent

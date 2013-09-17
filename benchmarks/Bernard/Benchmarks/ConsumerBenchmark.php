@@ -3,10 +3,11 @@
 namespace Bernard\Benchmarks;
 
 use Bernard\Message\DefaultMessage;
-use Bernard\Message\Envelope;
+use Bernard\Envelope;
 use Bernard\QueueFactory\InMemoryFactory;
 use Bernard\Consumer;
 use Bernard\ServiceResolver\ObjectResolver;
+use Bernard\Middleware\MiddlewareBuilder;
 use Bernard\Tests\Fixtures;
 
 class ConsumerBenchmark extends \Athletic\AthleticEvent
@@ -25,7 +26,7 @@ class ConsumerBenchmark extends \Athletic\AthleticEvent
             );
         }
 
-        $this->consumer = new Consumer($services);
+        $this->consumer = new Consumer($services, new MiddlewareBuilder);
     }
 
     /**
