@@ -6,10 +6,7 @@ class EchoTimeService
 {
     public function echoTime(DefaultMessage $message)
     {
-        if (rand(0, 10) == 7) {
-            throw new \RuntimeException('I failed because rand was 7');
-        }
-
-        usleep(100);
+        echo "Message produced at " . date('H:i:s', $message->get('time')) . "\n";
+        echo "Executed at " . date('H:i:s') . "\n\n";
     }
 }
