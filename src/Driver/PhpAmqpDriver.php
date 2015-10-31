@@ -13,21 +13,22 @@ class PhpAmqpDriver implements Driver
     /**
      * @var AMQPStreamConnection
      */
-    private $connection;
+    protected $connection;
 
     /**
      * @var AMQPChannel
      */
-    private $channel;
+    protected $channel;
 
     /**
      * @var string
      */
-    private $exchange;
+    protected $exchange;
+
     /**
      * @var array|null
      */
-    private $defaultMessageParams;
+    protected $defaultMessageParams;
 
     /**
      * @param AMQPStreamConnection $connection
