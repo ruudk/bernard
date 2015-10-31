@@ -62,6 +62,8 @@ function produce() {
             'time' => time(),
         )));
 
+        exit;
+
         usleep(rand(100, 1000));
     }
 }
